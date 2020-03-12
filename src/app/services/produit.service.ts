@@ -37,6 +37,7 @@ export class ProduitService {
   }
 
   getProduits(){
+    /*
     const promise = new Promise<any>((resolve, reject) => {
       const apiURL = `${this.apiUrl}/produit/`;
       this.http.get(apiURL,httpOptions).toPromise()
@@ -49,6 +50,12 @@ export class ProduitService {
             reject(err);
           }
         );
+    });
+    return promise;*/
+    const promise = new Promise<any>((resolve, reject) => {
+      this.http.get('assets/produit.json').subscribe(data => {
+        resolve(data);
+      });
     });
     return promise;
   }

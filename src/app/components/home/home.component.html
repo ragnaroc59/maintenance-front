@@ -1,8 +1,11 @@
+<app-navbar></app-navbar>
+
 <h1>Utilisateurs</h1>
 --------------------------------------------------------- <br>
 <p *ngFor="let user of users">
     Utilisateur : {{user.nom}} activé : {{user.active}}  <button (click)="choisirUser(user)">Choisir</button>
 </p>
+
 
 --------------------------------------------------------- <br>
 

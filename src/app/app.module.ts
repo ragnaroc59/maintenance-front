@@ -5,17 +5,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import { AddCommandeComponent } from './add-commande/add-commande.component';
+import { RouterModule, Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+const appRoutes: Routes = [
+  { path: 'addCommande', component: AddCommandeComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+    NavbarComponent,
+    AddCommandeComponent
+      ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
-  ],
+    AppRoutingModule,
+    MatToolbarModule,
+    MatSelectModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

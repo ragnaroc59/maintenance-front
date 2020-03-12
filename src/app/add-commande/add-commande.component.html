@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="form-group">
+    <span>Utilisateur :</span>
+    <mat-form-field>
+      <mat-select placeholder="Utilisateur" name="user" [(value)]="user">
+        <mat-option *ngFor="let user of users" [value]="user.id">
+          {{user.nom}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span>Magasin :</span>
+    <mat-form-field>
+      <mat-select placeholder="Magasin" name="magasin" [(value)]="magasin">
+        <mat-option *ngFor="let magasin of magasins" [value]="magasin.id">
+          {{magasin.nom}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="container">
+    <div class="col-6-md" *ngFor="let produit of produits; let i = index">
+      <div class="col-md-6" class="left-style produit" *ngIf="i%2 == 0">
+        Produit : {{produit.nom}} <br>
+        Prix du produit HT : {{produit.prix*0.8}} €<br>
+        TVA : 20% <br>
+        Prix du produit TTC : {{produit.prix}} € <br>
+        Quantite : {{produit.quantite}} <br>
+        <button (click)="ajouterProduit(produit)" class="btn btn-success"> Ajouter Produit </button>
+      </div>
+      <div class="col-md-6" class="right-style produit" *ngIf="i%2 != 0">
+        Produit : {{produit.nom}} <br>
+        Prix du produit HT : {{produit.prix*0.8}} €<br>
+        TVA : 20% <br>
+        Prix du produit TTC : {{produit.prix}} € <br>
+        Quantite : {{produit.quantite}} <br>
+        <button (click)="ajouterProduit(produit)" class="btn btn-success"> Ajouter Produit </button>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="passerCommande()" class="btn btn-success"> Passer commande </button>
+</div>

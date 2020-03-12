@@ -21,6 +21,7 @@ export class MagasinService {
 
 
   getMagasins(){
+    /*
     const promise = new Promise<any>((resolve, reject) => {
       const apiURL = `${this.apiUrl}/magasin`;
       this.http.get(apiURL,httpOptions).toPromise()
@@ -33,6 +34,12 @@ export class MagasinService {
             reject(err);
           }
         );
+    });
+    return promise;*/
+    const promise = new Promise<any>((resolve, reject) => {
+      this.http.get('assets/magasin.json').subscribe(data => {
+        resolve(data);
+      });
     });
     return promise;
   }
