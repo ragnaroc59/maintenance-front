@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div *ngFor="let commande of commandes">
+        <div class="container commande">
+            Client : {{commande.nom}}<br>
+            Magasin : {{commande.mag}}<br>
+            Date : {{commande.date}}<br>
+            <div>
+                <div *ngFor="let produit of commande.produits; let i = index">
+                    <div class="col-md-12">
+                        <div class="col-md-6" class="produit left-style">
+                            Produit : {{produit.nom}} <br>
+                            Prix du produit HT : {{produit.prix*0.8}} €<br>
+                            TVA : 20% <br>
+                            Prix du produit TTC : {{produit.prix}} € <br>
+                            Quantite : {{produit.quantite}} <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

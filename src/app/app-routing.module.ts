@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { AddCommandeComponent } from './add-commande/add-commande.component';
+import { ListCommandesComponent } from './list-commandes/list-commandes.component';
+import { ChiffreAffaireComponent } from './chiffre-affaire/chiffre-affaire.component';
+
 
 const routes: Routes = [
-  {path:"home", component:HomeComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full'}
+  { path: 'addCommande', component: AddCommandeComponent },
+  { path: 'listCommandes', component: ListCommandesComponent },
+  { path: 'chiffreAffaire', component: ChiffreAffaireComponent },
+  { path: '', redirectTo: '/addCommande', pathMatch: 'full'}
 ];
 
 @NgModule({

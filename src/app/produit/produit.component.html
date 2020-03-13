@@ -1,0 +1,18 @@
+<div class="col-md-6" class="left-style produit">
+    Produit : {{produit.nom}} <br>
+    Prix du produit HT : {{produit.prix*0.8}} €<br>
+    TVA : 20% <br>
+    Prix du produit TTC : {{produit.prix}} € <br>
+    <div class="col-md-6" class="left-style">
+        <mat-form-field>
+            <mat-select placeholder="Quantite" name="quantite" [(value)]="quantite">
+                <mat-option *ngFor="let quantite of quantites" [value]="quantite">
+                    {{quantite}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-6" class="right-style">
+        <button (click)="ajouterProduit(produit,quantite)" class="btn btn-success"> Ajouter Produit </button>
+    </div>
+</div>

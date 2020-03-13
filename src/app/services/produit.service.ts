@@ -19,7 +19,7 @@ export class ProduitService {
   constructor(public http: HttpClient) {
   }
 
-  getProduitParId(produitId){
+  getProduitParId(produitId){/*
     const promise = new Promise<any>((resolve, reject) => {
       const apiURL = `${this.apiUrl}/produit/`+produitId;
       this.http.get(apiURL,httpOptions).toPromise()
@@ -33,7 +33,8 @@ export class ProduitService {
           }
         );
     });
-    return promise;
+    return promise;*/
+    return null;
   }
 
   getProduits(){

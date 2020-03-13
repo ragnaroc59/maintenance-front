@@ -19,7 +19,7 @@ export class CommandeService {
   constructor(public http: HttpClient) {
   }
 
-  getCommandes(){
+  getCommandes(){/*
     const promise = new Promise<any>((resolve, reject) => {
       const apiURL = `${this.apiUrl}/commande`;
       this.http.get(apiURL,httpOptions).toPromise()
@@ -32,6 +32,12 @@ export class CommandeService {
             reject(err);
           }
         );
+    });
+    return promise;*/
+    const promise = new Promise<any>((resolve, reject) => {
+      this.http.get('assets/commandes.json').subscribe(data => {
+        resolve(data);
+      });
     });
     return promise;
   }

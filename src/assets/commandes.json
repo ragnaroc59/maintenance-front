@@ -1,0 +1,48 @@
+[
+  {
+    "mag": "mag1",
+    "nom": "dupont",
+	"date": "2020-03-11 10:22:01",
+    "produits": [
+		{
+		    "prix": 1.20,
+			"nom": "essence de zeynel",
+			"quantite": 5
+		},
+		{
+		    "prix": 1.20,
+			"nom": "tee couille",
+			"quantite": 6
+		},
+		{
+		    "prix": 1.20,
+			"nom": "cum",
+			"quantite": 2
+		}
+	]
+	
+  },
+    {
+    "mag": "mag1",
+    "nom": "dupont3",
+	"date": "2020-03-11 10:23:01",
+    "produits": [
+		{
+		    "prix": 1.20,
+			"nom": "cum de zeynel",
+			"quantite": 5
+		},
+		{
+		    "prix": 1.20,
+			"nom": "tee couille",
+			"quantite": 6
+		},
+		{
+		    "prix": 1.20,
+			"nom": "cum de cum",
+			"quantite": 2
+		}
+	]
+	
+  }
+]

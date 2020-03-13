@@ -23,10 +23,11 @@ export class AddCommandeComponent implements OnInit {
   produits: Array<any> = new Array();
   users: Array<any> = new Array();
 
+
   produitsToSave = new Array();
   user: any = {};
   magasin: any = {};
-  selectedUser : any = {id:'test',nom:'tessssttt'};
+  qte: any = {};
 
   constructor(private userService: UserService, private magasinService: MagasinService, private produitService: ProduitService, private commandeService: CommandeService) { }
 
@@ -43,22 +44,13 @@ export class AddCommandeComponent implements OnInit {
     console.log(this.users);
 
     let prixTotal = 0;
-    
-    //this.commandes = await this.commandeService.getCommandes();
-    this.commandes.forEach(commande => {
-      commande.produits.forEach(async (produit) => {
-        let prod = await this.produitService.getProduitParId(produit.produitId);
-        produit.nom = prod.nom;
-        produit.prix = prod.prix;
-        prixTotal = prixTotal + (produit.prix * produit.quantite);
-        commande.prixTotal = prixTotal;
-      });
-    });
+
+    this.commandes = await this.commandeService.getCommandes();
   }
 
 
   passerCommande() {
-    let commande = { produits: this.produits, user: this.user, magasin: this.magasin };
+    let commande = { produits: this.produitsToSave, user: this.user, magasin: this.magasin };
     console.log(commande);
   }
 

@@ -20,25 +20,11 @@
     </mat-form-field>
   </div>
   <div class="container">
-    <div class="col-6-md" *ngFor="let produit of produits; let i = index">
-      <div class="col-md-6" class="left-style produit" *ngIf="i%2 == 0">
-        Produit : {{produit.nom}} <br>
-        Prix du produit HT : {{produit.prix*0.8}} €<br>
-        TVA : 20% <br>
-        Prix du produit TTC : {{produit.prix}} € <br>
-        Quantite : {{produit.quantite}} <br>
-        <button (click)="ajouterProduit(produit)" class="btn btn-success"> Ajouter Produit </button>
-      </div>
-      <div class="col-md-6" class="right-style produit" *ngIf="i%2 != 0">
-        Produit : {{produit.nom}} <br>
-        Prix du produit HT : {{produit.prix*0.8}} €<br>
-        TVA : 20% <br>
-        Prix du produit TTC : {{produit.prix}} € <br>
-        Quantite : {{produit.quantite}} <br>
-        <button (click)="ajouterProduit(produit)" class="btn btn-success"> Ajouter Produit </button>
-      </div>
+    <div *ngFor="let produit of produits">
+      <app-produit (produitsToSave)="ajouterProduit($event)" [produit]="produit"></app-produit>
     </div>
   </div>
-
-  <button (click)="passerCommande()" class="btn btn-success"> Passer commande </button>
+  <div class="button">
+    <button (click)="passerCommande()" class="btn btn-success"> Passer commande </button>
+  </div>
 </div>
